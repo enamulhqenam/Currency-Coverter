@@ -1,0 +1,5 @@
+1st table name: currency
+cloumn: id bigInt not null auto_incerement primary key, currencyName varchar() ,currencySymbol varchar(),rate int not null , shortName not null varchar(),country varchar();
+
+2st table name :users 
+cloumn: id not null auto_increment primary key bigInt . Name varchar() , email varchar() not null uniq , prasswor varchar(500) not null ;
