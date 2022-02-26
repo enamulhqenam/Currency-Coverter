@@ -33,7 +33,7 @@ if(isset($_POST['submit']) && $_POST['submit']=='Update')
         $Dashboards = new Dashboard();
         $Dashboards->update($id ,$data);
         
-        // header("Location:../index.php?view=DashboardTable");
+        header("Location:../index.php?view=DashboardTable");
     }
     catch(Exception $error)
     {
@@ -52,6 +52,6 @@ if(isset($_REQUEST['action']) && $_REQUEST['action']=='edit')
     $ShortName  = $Dashboard[0]['ShortName'];
     $Country    = $Dashboard[0]['Country'];
 
-    header("Location:../index.php?view=DataTableEdit&id==".$id."&Name=".$Name."&Symbol=".$Symbol."&Rate=".$Rate."&ShortName=".$ShortName."&Country=".$Country.'"');
+    header("Location:../index.php?view=DataTableEdit&id=".$id."&Name=".$Name."&Symbol=".$Symbol."&Rate=".$Rate."&ShortName=".$ShortName."&Country=".$Country.'"');
 }
 ?>

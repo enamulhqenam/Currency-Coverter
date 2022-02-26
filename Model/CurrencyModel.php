@@ -1,5 +1,6 @@
-<?php
-class Dashboard{
+<?php 
+class CurrencyModel
+{
     private $Name;
     private $Symbol;
     private $Rate;
@@ -28,7 +29,6 @@ class Dashboard{
 
     public function update($id,$data)
     {
-        // echo $id;
 
         $this->Name     = $data['Name'];
         $this->Symbol   = $data['Symbol'];
@@ -38,14 +38,14 @@ class Dashboard{
 
         $DB = new Db();
 
-    //    echo $Query ="UPDATE Currency SET  
-    //    Name     ='$this->Name',
-    //    Symbol   ='$this->Symbol',
-    //    Rate     =$this->Rate,
-    //    ShortName='$this->ShortName',
-    //    Country  ='$this->Country' 
-    //    WHERE id=$id ";
-     $Query=" UPDATE `Currency` SET `Name`='$this->Name',`Symbol`='$this->Symbol',`Rate`=$this->Rate,`ShortName`='$this->ShortName',`Country`='$this->Country' WHERE id=$id";
+       $Query ="UPDATE Currency SET  
+       Name     ='$this->Name',
+       Symbol   ='$this->Symbol',
+       Rate     =$this->Rate,
+       ShortName='$this->ShortName',
+       Country  ='$this->Country' 
+       WHERE id=$id ";
+
         try {
             $DB->execute($Query);
         } catch (Exception $error) {
@@ -72,12 +72,11 @@ class Dashboard{
     {
         $DB = new Db();
 
-        $Query = "SELECT *FROM Currency WHERE id = $id";
+        $Query = "SELECT * FROM Currency WHERE id = $id";
         $result = $DB->fetch_result($Query);
         $DB->close();
         return $result;
     }
 
 }
-
 ?>

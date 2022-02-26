@@ -20,10 +20,6 @@
             {
                 throw new Exception('Database not connected !');
             }
-            else
-            {
-                echo "Database Conneted is successfully !";
-            }
         }
         public function close()
         {
