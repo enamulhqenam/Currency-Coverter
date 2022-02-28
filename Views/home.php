@@ -18,7 +18,6 @@ if(isset($_POST['submit']) && $_POST['submit'] =='Convert')
     $ToCurrencyRate     = $ToCurrency[0]['Rate'];
 
     $CovertedAmount =  round(($ToCurrencyRate * $Amount) / $FromCurrencyRate,2);
-// 
 //    var_dump($ConvertedAmount);
 }
 ?>
